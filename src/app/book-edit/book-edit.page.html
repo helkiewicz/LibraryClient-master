@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="brown">
+    <ion-title>Edit Book Record</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-input label="Title" [(ngModel)]="data.tittle" placeholder="Enter Title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Author" [(ngModel)]="data.author" placeholder="Enter Author"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Section" [(ngModel)]="data.section" placeholder="Enter Section"></ion-input>
+  </ion-item>
+
+  <!-- <ion-item>
+    <ion-input label="Status" type=number [(ngModel)]="data.status" placeholder="Enter Status"></ion-input>
+  </ion-item> -->
+
+  <ion-item>
+    <ion-label>Status</ion-label>
+    <ion-select [(ngModel)]="data.status" placeholder="Select Status">
+      <ion-select-option [value]="0">Available</ion-select-option>
+      <ion-select-option [value]="1">Unavailable</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button (click)="update()" color="success" size="small">
+    Update
+  </ion-button>
+  <ion-button [routerLink]="['/book-list']" color="danger" size="small">
+    Cancel
+  </ion-button>
+</ion-content>

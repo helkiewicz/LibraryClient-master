@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sign in User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+ 
+<ion-content class="form"> 
+  <div class="background-container">
+    <div class="background-image"></div>
+    <div class="welcome-message">
+    Welcome to our library!
+  </div>
+</div>
+
+  <ion-row>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item>
+  </ion-row>
+  
+  <ion-row>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" #password required></ion-input>
+    </ion-item>
+  </ion-row>
+
+  <ion-row class="buttons">
+    <ion-col>
+      <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
+      <ion-button type="submit" color="danger" (click)="authService.GoogleAuth()" expand="block">Login with Google</ion-button>
+      <ion-button expand="block" color="warning" [routerLink]="['/password-reset']">Password Reset</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

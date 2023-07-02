@@ -1,0 +1,24 @@
+.content-grid {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    filter: blur(2px); /* Размытие фона с радиусом 3 пикселя */
+    z-index: -1;
+  }

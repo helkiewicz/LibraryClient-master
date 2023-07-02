@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="brown">
+    <ion-title>List All Books</ion-title>
+    <ion-buttons slot="end">
+      <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+ 
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchBooks()" placeholder="Search by title"></ion-searchbar>
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">Id</th> -->
+        <th scope="col">Tittle</th>
+        <th scope="col">Author</th>
+        <th scope="col">Section</th>
+        <th scope="col">Status</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of booksData">
+        <!-- <td>{{ item.idBook }}</td> -->
+        <td>{{ item.tittle }}</td>
+        <td>{{ item.author }}</td>
+        <td>{{ item.section }}</td>
+        <!-- <td>{{ item.status }}</td> -->
+        <td>{{ item.status === 0 ? 'Available' : 'Unavailable' }}</td>
+        <td style="display: flex">
+          <ion-button color="warning" size="small" routerLink='/book-edit/{{item.idBook}}'>
+            <ion-icon name="create"></ion-icon>
+          </ion-button>
+          <ion-button color="danger" size="small" (click)="delete(item)">
+            <ion-icon name="trash"> </ion-icon>
+          </ion-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ion-button [routerLink]="['/book-create']">
+    Add Book
+  </ion-button>
+</ion-content>
+
+
+
