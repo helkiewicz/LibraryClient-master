@@ -1,12 +1,15 @@
 
 <ion-header>
   <ion-toolbar>
-    <ion-title> Welcome to our library </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="auth-form">
+  <div class="background-image"></div>
+  <div class="welcome-message">
+    Welcome to our library!
+  </div>
   <ion-grid>
-    <ion-row>
+    <ion-row class="buttons">
       <ion-col class="ion-align-self-center">
         <ion-button
           [routerLink]="['/registration']"
